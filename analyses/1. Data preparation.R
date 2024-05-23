@@ -2,7 +2,7 @@
 # Data preparation 
 # 
 # @description
-# Préparation du jeu de données à traite
+# Préparation du jeu de données à traiter
 # 
 # @objectif
 # Fusionner les jeux de données, homogénéiser la taxo, préparer les colonnes d'intérêt 
@@ -17,9 +17,8 @@
 librarian::shelf(tidyr, dplyr, ggplot2, rinat, RODBC, stringr, rgnparser)
 
 # Database queries 
-<<<<<<< HEAD
   ## Alternative: importing data from a csv file
-  #df0 <- read.csv("data/raw-data/Macrofaune_Orchamp_2021_2022.csv", h=T, sep = ";")
+  # df0 <- read.csv("data/raw-data/Macrofaune_Orchamp_2021_2022.csv", h=T, sep = ";")
   
   ## Better way : Connection to Mike's Access database
       ### Set up driver info and database path
@@ -35,7 +34,7 @@ librarian::shelf(tidyr, dplyr, ggplot2, rinat, RODBC, stringr, rgnparser)
       
       ### Load Orchamp data into R dataframe
       
-=======
+#=======
 ## Alternative: importing data from a csv file
 #df0 <- read.csv("data/raw-data/Macrofaune_Orchamp_2021_2022.csv", h=T, sep = ";")
 
@@ -76,7 +75,6 @@ inat_orchamp <- inat_orchamp0 %>%
 #Modifications about old classificaton
 sub('Philonthina', 'Philonthus', inat_orchamp$taxon.name)->inat_orchamp$taxon.name
 
->>>>>>> 115dcdd95c2f72e695a85daf16eb70556342f60c
 
 
 # Data preparation
