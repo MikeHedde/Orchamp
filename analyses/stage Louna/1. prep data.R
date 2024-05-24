@@ -60,9 +60,9 @@ source("analyses/functions/my_taxonChecker function code.R")
 valid_names <- my_taxonChecker(uniqueNames_raw$name)  
 
 ## Merging the taxonomic backbone to the observations
-df1 <- left_join(df, valid_names, by = c("taxon.name" = "initial")) %>%
-  select(!c(canonic, Valid.Name, taxon.name, scientificName)) %>%
-  mutate(INat = ifelse(is.na(INat), 0, 1)) %>%
+df1 <- left_join(df0, valid_names, by = c("Valid.Name" = "initial")) %>%
+  #select(!c(canonic, Valid.Name, scientificName)) %>%
+  filter(familyName == "Carabidae", method == "barber") %>%
   separate(id_plot, c("gradient", "alti"))
 
 ## Save dataset
